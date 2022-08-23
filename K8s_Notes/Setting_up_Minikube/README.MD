@@ -44,6 +44,12 @@ Since we have installed `kvm2 driver` we have to start specifying the driver
 minikube start --driver=kvm2
 ```
 
+add alias for terminal
+```
+alias kubectl="minikube kubectl --"
+```
+
+
 I have kubectl installed, so i can now use it to access shiny new cluster:
 ```
 $ kubectl get po -A
@@ -90,8 +96,21 @@ $ minikube service hello-minikube
 
 ## Stop Minikube 
 
-Pause Kubernetes without impacting deployed applications:
 
+
+Halt the cluster:
+
+```
+minikube stop
+```
+Delete all of the minikube clusters:
+
+```
+minikube delete --all
+```
+
+## Other Important commands 
+Pause Kubernetes without impacting deployed applications:
 ```
 minikube pause
 ```
@@ -100,11 +119,7 @@ Unpause a paused instance:
 ```
 minikube unpause
 ```
-Halt the cluster:
 
-```
-minikube stop
-```
 Increase the default memory limit (requires a restart):
 
 ```
@@ -119,9 +134,4 @@ Create a second cluster running an older Kubernetes release:
 
 ```
 minikube start -p aged --kubernetes-version=v1.16.1
-```
-Delete all of the minikube clusters:
-
-```
-minikube delete --all
 ```
