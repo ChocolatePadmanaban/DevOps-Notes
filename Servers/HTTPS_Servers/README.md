@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # HTTPS Server Creation
 
 ## Certificate Creation 
